@@ -6,5 +6,15 @@ namespace MMO_Gear_Comparison_App
         {
             InitializeComponent();
         }
+
+        private void btnCompareGear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnManageGear_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

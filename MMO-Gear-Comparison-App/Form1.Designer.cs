@@ -28,12 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            btnCompareGear = new Button();
+            btnManageGear = new Button();
+            SuspendLayout();
+            // 
+            // btnCompareGear
+            // 
+            btnCompareGear.Location = new Point(72, 135);
+            btnCompareGear.Name = "btnCompareGear";
+            btnCompareGear.Size = new Size(308, 87);
+            btnCompareGear.TabIndex = 0;
+            btnCompareGear.Text = "Compare Gear";
+            btnCompareGear.UseVisualStyleBackColor = true;
+            btnCompareGear.Click += btnCompareGear_Click;
+            // 
+            // btnManageGear
+            // 
+            btnManageGear.Location = new Point(446, 135);
+            btnManageGear.Name = "btnManageGear";
+            btnManageGear.Size = new Size(296, 87);
+            btnManageGear.TabIndex = 1;
+            btnManageGear.Text = "Manage Gear";
+            btnManageGear.UseVisualStyleBackColor = true;
+            btnManageGear.Click += btnManageGear_Click;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 386);
+            Controls.Add(btnManageGear);
+            Controls.Add(btnCompareGear);
+            Name = "Form1";
+            Text = "MMO-Gear-Comparison-App";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button btnCompareGear;
+        private Button btnManageGear;
     }
 }
