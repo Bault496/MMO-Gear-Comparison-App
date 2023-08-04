@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace MMO_Gear_Comparison_App
 {
-    public partial class GearComparison : Form
+    public partial class GearComparisonForm : Form
     {
-        public GearComparison()
+        public GearComparisonForm()
         {
             InitializeComponent();
+        }
+
+        private void btnExitGearComparison_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

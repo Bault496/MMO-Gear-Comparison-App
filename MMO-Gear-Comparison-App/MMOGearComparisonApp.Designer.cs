@@ -1,6 +1,6 @@
 ﻿namespace MMO_Gear_Comparison_App
 {
-    partial class Form1
+    partial class MMOGearComparisonForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -30,6 +30,7 @@
         {
             btnCompareGear = new Button();
             btnManageGear = new Button();
+            btnExit = new Button();
             SuspendLayout();
             // 
             // btnCompareGear
@@ -52,11 +53,22 @@
             btnManageGear.UseVisualStyleBackColor = true;
             btnManageGear.Click += btnManageGear_Click;
             // 
+            // btnExit
+            // 
+            btnExit.Location = new Point(299, 270);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(224, 53);
+            btnExit.TabIndex = 2;
+            btnExit.Text = "Exit";
+            btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 386);
+            Controls.Add(btnExit);
             Controls.Add(btnManageGear);
             Controls.Add(btnCompareGear);
             Name = "Form1";
@@ -68,5 +80,6 @@
 
         private Button btnCompareGear;
         private Button btnManageGear;
+        private Button btnExit;
     }
 }
