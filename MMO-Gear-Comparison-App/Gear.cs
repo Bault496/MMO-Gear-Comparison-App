@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,26 +14,27 @@ namespace MMO_Gear_Comparison_App
     public class Gear
     {
         /// <summary>
-        /// Name of the piece of gear
-        /// </summary>
-        public string itemName { get; set; }
-        /// <summary>
         /// Id of the item
         /// </summary>
-        public string itemID { get; set; }
+        [Key] // Tell EF this is a primary key
+        public string ItemID { get; set; }
+        /// <summary>
+        /// Name of the piece of gear
+        /// </summary>
+        public string ItemName { get; set; }
         /// <summary>
         /// Item level of the piece of gear
         /// </summary>
-        public int itemLevel { get; set; }
+        public int ItemLevel { get; set; }
         /// <summary>
         /// Value that determines how much damage a weapon does
         /// </summary>
-        public int? damageScaling { get; set; }
+        public int? DamageScaling { get; set; }
 
         /// <summary>
         /// Value that determines that amount of armor a piece of gear has
         /// </summary>
-        public int? armorScaling { get; set; }
+        public int? ArmorScaling { get; set; }
 
         /// <summary>
         /// Determines the type of primary stat on the piece of gear
