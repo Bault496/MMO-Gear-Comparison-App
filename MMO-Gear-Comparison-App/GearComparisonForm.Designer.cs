@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             btnExitGearComparison = new Button();
+            cboFirstGear = new ComboBox();
+            cboSecondGear = new ComboBox();
+            lblGearOne = new Label();
+            lblGearSecond = new Label();
             SuspendLayout();
             // 
             // btnExitGearComparison
@@ -41,19 +45,63 @@
             btnExitGearComparison.UseVisualStyleBackColor = true;
             btnExitGearComparison.Click += btnExitGearComparison_Click;
             // 
+            // cboFirstGear
+            // 
+            cboFirstGear.FormattingEnabled = true;
+            cboFirstGear.Location = new Point(64, 55);
+            cboFirstGear.Name = "cboFirstGear";
+            cboFirstGear.Size = new Size(121, 23);
+            cboFirstGear.TabIndex = 1;
+            // 
+            // cboSecondGear
+            // 
+            cboSecondGear.FormattingEnabled = true;
+            cboSecondGear.Location = new Point(615, 55);
+            cboSecondGear.Name = "cboSecondGear";
+            cboSecondGear.Size = new Size(121, 23);
+            cboSecondGear.TabIndex = 2;
+            // 
+            // lblGearOne
+            // 
+            lblGearOne.AutoSize = true;
+            lblGearOne.Location = new Point(64, 23);
+            lblGearOne.Name = "lblGearOne";
+            lblGearOne.Size = new Size(56, 15);
+            lblGearOne.TabIndex = 3;
+            lblGearOne.Text = "First Gear";
+            // 
+            // lblGearSecond
+            // 
+            lblGearSecond.AutoSize = true;
+            lblGearSecond.Location = new Point(615, 23);
+            lblGearSecond.Name = "lblGearSecond";
+            lblGearSecond.Size = new Size(73, 15);
+            lblGearSecond.TabIndex = 4;
+            lblGearSecond.Text = "Second Gear";
+            // 
             // GearComparisonForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblGearSecond);
+            Controls.Add(lblGearOne);
+            Controls.Add(cboSecondGear);
+            Controls.Add(cboFirstGear);
             Controls.Add(btnExitGearComparison);
             Name = "GearComparisonForm";
             Text = "GearComparison";
+            Load += GearComparisonForm_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Button btnExitGearComparison;
+        private ComboBox cboFirstGear;
+        private ComboBox cboSecondGear;
+        private Label lblGearOne;
+        private Label lblGearSecond;
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,38 @@ namespace MMO_Gear_Comparison_App
         public GearComparisonForm()
         {
             InitializeComponent();
+        }
+
+        private void GearComparisonForm_Load(object sender, EventArgs e)
+        {
+            PopulateGearList();
+        }
+
+        private void PopulateGearList()
+        {
+            cboFirstGear.Items.Clear();
+            cboSecondGear.Items.Clear();
+
+            try
+            {
+                using GearContext dbContext = new GearContext();
+
+                List<Gear> gearList = dbContext.Gears.ToList();
+
+                foreach(Gear g in gearList)
+                {
+                    cboFirstGear.Items.Add(g);
+                    cboSecondGear.Items.Add(g);
+                }
+
+            }
+            catch(SqlException)
+            {
+                MessageBox.Show("Database is not available. PLease try again later", "Database Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                Close();
+            }
         }
 
         private void btnExitGearComparison_Click(object sender, EventArgs e)
