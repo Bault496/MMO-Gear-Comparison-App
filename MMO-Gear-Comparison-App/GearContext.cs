@@ -21,7 +21,7 @@ namespace MMO_Gear_Comparison_App
             // Trusted_Connection = indicates that our windows account should be used
             options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=MMOGearComparsionApp;Trusted_Connection=True;");
         }
-        // Tell EF Core ot track Gear in the database
+        // Tell EF Core to track Gear in the database
         public DbSet<Gear> Gears { get; set; } 
     }
 }

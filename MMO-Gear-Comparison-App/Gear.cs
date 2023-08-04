@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace MMO_Gear_Comparison_App
 {
+
     /// <summary>
     /// Represents a single piece of equipment
     /// </summary>
@@ -18,14 +19,17 @@ namespace MMO_Gear_Comparison_App
         /// </summary>
         [Key] // Tell EF this is a primary key
         public string ItemID { get; set; }
+
         /// <summary>
         /// Name of the piece of gear
         /// </summary>
         public string ItemName { get; set; }
+
         /// <summary>
         /// Item level of the piece of gear
         /// </summary>
         public int ItemLevel { get; set; }
+
         /// <summary>
         /// Value that determines how much damage a weapon does
         /// </summary>
@@ -41,6 +45,7 @@ namespace MMO_Gear_Comparison_App
         /// like Intellect, Strength, and Dexterity
         /// </summary>
         public string? primaryStat { get; set; }
+
         /// <summary>
         /// Determines the amount of the primary stat is on a piece of gear
         /// </summary>
@@ -48,28 +53,31 @@ namespace MMO_Gear_Comparison_App
 
         /// <summary>
         /// Determines the type of secondary stat on the piece of gear
-        /// like Spirt, Critical Chance, and Speed
+        /// like Spirit, Critical Chance, and Speed
         /// </summary>
         public string? secondaryStat { get; set; }
+
         /// <summary>
         /// Determines the amount of the secondary stat is on a piece of gear
         /// </summary>
         public int? secondaryStatScaling { get; set; }
+
         /// <summary>
         /// Determines how much durability a piece of gear has
         /// </summary>
         public int? durability { get; set; }
+
         /// <summary>
         /// Determines what slot the piece of gear goes into
         /// like Helm, Shoulders, Legs, Boots
         /// </summary>
         public string GearSlot { get; set; }
+
         /// <summary>
         /// Determines what type of armor the gear is
         /// like Cloth, Leather, or Plate
         /// </summary>
         public string GearType { get; set; }
-
 
     }
 }
