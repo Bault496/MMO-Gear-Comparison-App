@@ -65,7 +65,7 @@ namespace MMO_Gear_Comparison_App
         /// <summary>
         /// Determines how much durability a piece of gear has
         /// </summary>
-        public int? durability { get; set; }
+        public int? Durability { get; set; }
 
         /// <summary>
         /// Determines what slot the piece of gear goes into
@@ -77,7 +77,7 @@ namespace MMO_Gear_Comparison_App
         /// Determines what type of armor the gear is
         /// like Cloth, Leather, or Plate
         /// </summary>
-        public string GearType { get; set; }
+        public string? GearType { get; set; }
 
     }
 }
