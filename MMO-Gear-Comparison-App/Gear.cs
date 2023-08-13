@@ -44,23 +44,23 @@ namespace MMO_Gear_Comparison_App
         /// Determines the type of primary stat on the piece of gear
         /// like Intellect, Strength, and Dexterity
         /// </summary>
-        public string? primaryStat { get; set; }
+        public string? PrimaryStat { get; set; }
 
         /// <summary>
         /// Determines the amount of the primary stat is on a piece of gear
         /// </summary>
-        public int? primaryStatScaling { get; set; }
+        public int? PrimaryStatScaling { get; set; }
 
         /// <summary>
         /// Determines the type of secondary stat on the piece of gear
         /// like Spirit, Critical Chance, and Speed
         /// </summary>
-        public string? secondaryStat { get; set; }
+        public string? SecondaryStat { get; set; }
 
         /// <summary>
         /// Determines the amount of the secondary stat is on a piece of gear
         /// </summary>
-        public int? secondaryStatScaling { get; set; }
+        public int? SecondaryStatScaling { get; set; }
 
         /// <summary>
         /// Determines how much durability a piece of gear has

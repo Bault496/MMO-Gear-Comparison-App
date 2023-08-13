@@ -25,19 +25,31 @@ namespace MMO_Gear_Comparison_App
 
         private void AddGear()
         {
+            string itemName = txtGearName.Text;
+            int itemLevel = Convert.ToInt32(txtGearLevel.Text);
+            int? damageScaling = Convert.ToInt32(txtDamageStat.Text);
+            int? armorScaling = Convert.ToInt32(txtArmorStat.Text);
+            string? primaryStat = txtPrimaryStatType.Text;
+            int? primaryStatScaling = Convert.ToInt32(txtPrimaryStat.Text);
+            string? secondaryStat = txtSecondaryStatType.Text;
+            int? secondaryStatScaling = Convert.ToInt32(txtSecondaryStat.Text);
+            int? durability = Convert.ToInt32(txtDurability.Text);
+            string gearSlot = txtGearSlot.Text;
+            string? gearType = txtGearType.Text;
+
             Gear gear = new Gear()
             {
-                ItemName = txtGearName.Text,
-                ItemLevel = Convert.ToInt32(txtGearLevel.Text),
-                DamageScaling = Convert.ToInt32(txtDamageStat.Text),
-                ArmorScaling = Convert.ToInt32(txtArmorStat.Text),
-                primaryStat = txtPrimaryStatType.Text,
-                primaryStatScaling = Convert.ToInt32(txtPrimaryStat),
-                secondaryStat = txtSecondaryStatType.Text,
-                secondaryStatScaling = Convert.ToInt32(txtSecondaryStat.Text),
-                Durability = Convert.ToInt32(txtDurability.Text),
-                GearSlot = txtGearSlot.Text,
-                GearType = txtGearType.Text
+                ItemName = itemName,
+                ItemLevel = itemLevel,
+                DamageScaling = damageScaling,
+                ArmorScaling = armorScaling,
+                PrimaryStat = primaryStat,
+                PrimaryStatScaling = primaryStatScaling,
+                SecondaryStat = secondaryStat,
+                SecondaryStatScaling = secondaryStatScaling,
+                Durability = durability,
+                GearSlot = gearSlot,
+                GearType = gearType
             };
 
             try
@@ -53,6 +65,14 @@ namespace MMO_Gear_Comparison_App
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Close();
             }
+        }
+
+        private bool CheckIfVoid()
+        {
+            bool IsVoid = false;
+
+
+            return IsVoid;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
