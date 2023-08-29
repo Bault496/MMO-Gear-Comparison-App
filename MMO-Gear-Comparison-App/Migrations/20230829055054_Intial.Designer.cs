@@ -12,23 +12,26 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MMO_Gear_Comparison_App.Migrations
 {
     [DbContext(typeof(GearContext))]
-    [Migration("20230803223958_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20230829055054_Intial")]
+    partial class Intial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.9")
+                .HasAnnotation("ProductVersion", "7.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("MMO_Gear_Comparison_App.Gear", b =>
                 {
-                    b.Property<string>("ItemID")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("ItemID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ItemID"));
 
                     b.Property<int?>("ArmorScaling")
                         .HasColumnType("int");
@@ -36,12 +39,14 @@ namespace MMO_Gear_Comparison_App.Migrations
                     b.Property<int?>("DamageScaling")
                         .HasColumnType("int");
 
+                    b.Property<int?>("Durability")
+                        .HasColumnType("int");
+
                     b.Property<string>("GearSlot")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("GearType")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ItemLevel")
@@ -51,19 +56,16 @@ namespace MMO_Gear_Comparison_App.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("durability")
-                        .HasColumnType("int");
-
-                    b.Property<string>("primaryStat")
+                    b.Property<string>("PrimaryStat")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("primaryStatScaling")
+                    b.Property<int?>("PrimaryStatScaling")
                         .HasColumnType("int");
 
-                    b.Property<string>("secondaryStat")
+                    b.Property<string>("SecondaryStat")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("secondaryStatScaling")
+                    b.Property<int?>("SecondaryStatScaling")
                         .HasColumnType("int");
 
                     b.HasKey("ItemID");

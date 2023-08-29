@@ -5,7 +5,7 @@
 namespace MMO_Gear_Comparison_App.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class Intial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -14,18 +14,19 @@ namespace MMO_Gear_Comparison_App.Migrations
                 name: "Gears",
                 columns: table => new
                 {
-                    ItemID = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ItemID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     ItemName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ItemLevel = table.Column<int>(type: "int", nullable: false),
                     DamageScaling = table.Column<int>(type: "int", nullable: true),
                     ArmorScaling = table.Column<int>(type: "int", nullable: true),
-                    primaryStat = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    primaryStatScaling = table.Column<int>(type: "int", nullable: true),
-                    secondaryStat = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    secondaryStatScaling = table.Column<int>(type: "int", nullable: true),
-                    durability = table.Column<int>(type: "int", nullable: true),
+                    PrimaryStat = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PrimaryStatScaling = table.Column<int>(type: "int", nullable: true),
+                    SecondaryStat = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SecondaryStatScaling = table.Column<int>(type: "int", nullable: true),
+                    Durability = table.Column<int>(type: "int", nullable: true),
                     GearSlot = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    GearType = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    GearType = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
