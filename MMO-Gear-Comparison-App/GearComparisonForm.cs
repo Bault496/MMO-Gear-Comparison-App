@@ -37,8 +37,8 @@ namespace MMO_Gear_Comparison_App
 
                 foreach(Gear g in gearList)
                 {
-                    cboFirstGear.Items.Add(g);
-                    cboSecondGear.Items.Add(g);
+                    cboFirstGear.Items.Add(g.ItemName);
+                    cboSecondGear.Items.Add(g.ItemName);
                 }
 
             }
