@@ -18,7 +18,7 @@ namespace MMO_Gear_Comparison_App
         /// Id of the item
         /// </summary>
         [Key] // Tell EF this is a primary key
-        public string ItemID { get; set; }
+        public int ItemID { get; set; }
 
         /// <summary>
         /// Name of the piece of gear
