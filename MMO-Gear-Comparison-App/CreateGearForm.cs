@@ -22,9 +22,6 @@ namespace MMO_Gear_Comparison_App
         {
             AddGear();
         }
-
-<<<<<<< Updated upstream
-=======
         private void AddGear()
         {
             string itemName = txtGearName.Text;
@@ -129,7 +126,6 @@ namespace MMO_Gear_Comparison_App
             }
 
             return false;
->>>>>>> Stashed changes
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
