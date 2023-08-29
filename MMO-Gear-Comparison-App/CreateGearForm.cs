@@ -23,18 +23,72 @@ namespace MMO_Gear_Comparison_App
             AddGear();
         }
 
+<<<<<<< Updated upstream
+=======
         private void AddGear()
         {
             string itemName = txtGearName.Text;
+
             int itemLevel = Convert.ToInt32(txtGearLevel.Text);
-            int? damageScaling = Convert.ToInt32(txtDamageStat.Text);
-            int? armorScaling = Convert.ToInt32(txtArmorStat.Text);
+
+            int? damageScaling = 0;
+            if(IsTextBoxEmpty(txtDamageStat))
+            {
+                damageScaling = null;
+            }
+            else
+            {
+                damageScaling = Convert.ToInt32(txtDamageStat.Text);
+            }
+
+            int? armorScaling = 0;
+            if(IsTextBoxEmpty(txtArmorStat))
+            {
+                armorScaling = null;
+            }
+            else
+            {
+                armorScaling = Convert.ToInt32(txtArmorStat.Text);
+            }
+            
+
             string? primaryStat = txtPrimaryStatType.Text;
-            int? primaryStatScaling = Convert.ToInt32(txtPrimaryStat.Text);
+
+            int? primaryStatScaling = 0;
+            if (IsTextBoxEmpty(txtPrimaryStat))
+            {
+                primaryStatScaling = null;
+            }
+            else
+            {
+                primaryStatScaling = Convert.ToInt32(txtPrimaryStat.Text);
+            }
+            
+
             string? secondaryStat = txtSecondaryStatType.Text;
-            int? secondaryStatScaling = Convert.ToInt32(txtSecondaryStat.Text);
-            int? durability = Convert.ToInt32(txtDurability.Text);
+
+            int? secondaryStatScaling = 0;
+            if (IsTextBoxEmpty(txtSecondaryStat))
+            {
+                secondaryStatScaling = null;
+            }
+            else
+            {
+                secondaryStatScaling = Convert.ToInt32(txtSecondaryStat.Text);
+            }
+
+            int? durability = 0;
+            if(IsTextBoxEmpty(txtDurability))
+            {
+                durability = null;
+            }
+            else
+            {
+                durability = Convert.ToInt32(txtDurability.Text);
+            }
+
             string gearSlot = txtGearSlot.Text;
+
             string? gearType = txtGearType.Text;
 
             Gear gear = new Gear()
@@ -67,12 +121,15 @@ namespace MMO_Gear_Comparison_App
             }
         }
 
-        private bool CheckIfVoid()
+        private static bool IsTextBoxEmpty(TextBox textBox)
         {
-            bool IsVoid = false;
+            if(string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                return true;
+            }
 
-
-            return IsVoid;
+            return false;
+>>>>>>> Stashed changes
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
