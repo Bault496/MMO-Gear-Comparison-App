@@ -110,6 +110,7 @@ namespace MMO_Gear_Comparison_App
                 dbContext.Gears.Add(gear);
                 dbContext.SaveChanges();
                 MessageBox.Show("Gear was added successfully!");
+                ClearGearStats();
             }
             catch (SqlException)
             {
@@ -127,6 +128,21 @@ namespace MMO_Gear_Comparison_App
             }
 
             return false;
+        }
+
+        private void ClearGearStats()
+        {
+            txtGearName.Text = "";
+            txtGearLevel.Text = "";
+            txtDamageStat.Text = "";
+            txtArmorStat.Text = "";
+            txtPrimaryStatType.Text = "";
+            txtPrimaryStat.Text = "";
+            txtSecondaryStatType.Text = "";
+            txtSecondaryStat.Text = "";
+            txtDurability.Text = "";
+            txtGearSlot.Text = "";
+            txtGearType.Text = "";
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
