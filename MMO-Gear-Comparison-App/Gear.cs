@@ -79,5 +79,9 @@ namespace MMO_Gear_Comparison_App
         /// </summary>
         public string? GearType { get; set; }
 
+        public override string ToString()
+        {
+            return ItemName;
+        }
     }
 }
