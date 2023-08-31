@@ -67,8 +67,14 @@ namespace MMO_Gear_Comparison_App
         {
 
             Gear selectedGear = (Gear)cboGearSelector.SelectedItem;
-
+            if (cboGearSelector.SelectedIndex != -1)
+            {
             RefreshStats(selectedGear);
+        }
+            else
+            {
+                ClearStat();
+            }
         }
 
         private void ClearStat()
