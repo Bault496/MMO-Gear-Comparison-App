@@ -109,6 +109,7 @@ namespace MMO_Gear_Comparison_App
 
                 dbContext.Gears.Add(gear);
                 dbContext.SaveChanges();
+                MessageBox.Show("Gear was added successfully!");
             }
             catch (SqlException)
             {
