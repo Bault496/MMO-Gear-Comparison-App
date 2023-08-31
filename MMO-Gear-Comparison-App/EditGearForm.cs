@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using TextBox = System.Windows.Forms.TextBox;
 
 namespace MMO_Gear_Comparison_App
 {
@@ -117,103 +118,258 @@ namespace MMO_Gear_Comparison_App
         {
             Gear selectedGear = (Gear)cboGearSelector.SelectedItem;
             int itemId = selectedGear.ItemID;
-            string itemName = txtGearName.Text;
-
-            int itemLevel = Convert.ToInt32(txtGearLevel.Text);
-
-            int? damageScaling = 0;
-            if (IsTextBoxEmpty(txtDamageStat))
+            bool isAllValid = IsInputValid();
+            if (isAllValid)
             {
-                damageScaling = null;
+                
+                string itemName = txtGearName.Text;
+
+                int itemLevel = Convert.ToInt32(txtGearLevel.Text);
+
+                int? damageScaling = 0;
+                if (IsTextBoxEmpty(txtDamageStat))
+                {
+                    damageScaling = null;
+                }
+                else
+                {
+                    damageScaling = Convert.ToInt32(txtDamageStat.Text);
+                }
+
+                int? armorScaling = 0;
+                if (IsTextBoxEmpty(txtArmorStat))
+                {
+                    armorScaling = null;
+                }
+                else
+                {
+                    armorScaling = Convert.ToInt32(txtArmorStat.Text);
+                }
+
+
+                string? primaryStat = txtPrimaryStatType.Text;
+
+                int? primaryStatScaling = 0;
+                if (IsTextBoxEmpty(txtPrimaryStat))
+                {
+                    primaryStatScaling = null;
+                }
+                else
+                {
+                    primaryStatScaling = Convert.ToInt32(txtPrimaryStat.Text);
+                }
+
+
+                string? secondaryStat = txtSecondaryStatType.Text;
+
+                int? secondaryStatScaling = 0;
+                if (IsTextBoxEmpty(txtSecondaryStat))
+                {
+                    secondaryStatScaling = null;
+                }
+                else
+                {
+                    secondaryStatScaling = Convert.ToInt32(txtSecondaryStat.Text);
+                }
+
+                int? durability = 0;
+                if (IsTextBoxEmpty(txtDurability))
+                {
+                    durability = null;
+                }
+                else
+                {
+                    durability = Convert.ToInt32(txtDurability.Text);
+                }
+
+                string gearSlot = txtGearSlot.Text;
+
+                string? gearType = txtGearType.Text;
+
+                Gear gear = new Gear()
+                {
+                    ItemID = itemId,
+                    ItemName = itemName,
+                    ItemLevel = itemLevel,
+                    DamageScaling = damageScaling,
+                    ArmorScaling = armorScaling,
+                    PrimaryStat = primaryStat,
+                    PrimaryStatScaling = primaryStatScaling,
+                    SecondaryStat = secondaryStat,
+                    SecondaryStatScaling = secondaryStatScaling,
+                    Durability = durability,
+                    GearSlot = gearSlot,
+                    GearType = gearType
+                };
+
+                try
+                {
+                    using GearContext dbContext = new GearContext();
+
+                    dbContext.Gears.Update(gear);
+                    dbContext.SaveChanges();
+                    MessageBox.Show("Gear was updated successfully!");
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Database is not available right now. Please try again later.", "Database Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Close();
+                }
+                cboGearSelector.SelectedIndex = -1;
             }
-            else
-            {
-                damageScaling = Convert.ToInt32(txtDamageStat.Text);
-            }
-
-            int? armorScaling = 0;
-            if (IsTextBoxEmpty(txtArmorStat))
-            {
-                armorScaling = null;
-            }
-            else
-            {
-                armorScaling = Convert.ToInt32(txtArmorStat.Text);
-            }
-
-
-            string? primaryStat = txtPrimaryStatType.Text;
-
-            int? primaryStatScaling = 0;
-            if (IsTextBoxEmpty(txtPrimaryStat))
-            {
-                primaryStatScaling = null;
-            }
-            else
-            {
-                primaryStatScaling = Convert.ToInt32(txtPrimaryStat.Text);
-            }
-
-
-            string? secondaryStat = txtSecondaryStatType.Text;
-
-            int? secondaryStatScaling = 0;
-            if (IsTextBoxEmpty(txtSecondaryStat))
-            {
-                secondaryStatScaling = null;
-            }
-            else
-            {
-                secondaryStatScaling = Convert.ToInt32(txtSecondaryStat.Text);
-            }
-
-            int? durability = 0;
-            if (IsTextBoxEmpty(txtDurability))
-            {
-                durability = null;
-            }
-            else
-            {
-                durability = Convert.ToInt32(txtDurability.Text);
-            }
-
-            string gearSlot = txtGearSlot.Text;
-
-            string? gearType = txtGearType.Text;
-
-            Gear gear = new Gear()
-            {
-                ItemID = itemId,
-                ItemName = itemName,
-                ItemLevel = itemLevel,
-                DamageScaling = damageScaling,
-                ArmorScaling = armorScaling,
-                PrimaryStat = primaryStat,
-                PrimaryStatScaling = primaryStatScaling,
-                SecondaryStat = secondaryStat,
-                SecondaryStatScaling = secondaryStatScaling,
-                Durability = durability,
-                GearSlot = gearSlot,
-                GearType = gearType
-            };
-
-            try
-            {
-                using GearContext dbContext = new GearContext();
-
-                dbContext.Gears.Update(gear);
-                dbContext.SaveChanges();
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Database is not available right now. Please try again later.", "Database Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Close();
-            }
-            cboGearSelector.SelectedIndex = -1;
         }
 
-        private bool IsTextBoxEmpty(System.Windows.Forms.TextBox textBox)
+        /// <summary>
+        /// Checks all inputs to verify they have the right info
+        /// displays errormessages if not
+        /// </summary>
+        /// <returns></returns>
+        private bool IsInputValid()
+        {
+            bool isAllValid = true;
+            string errMessages = "";
+            int result;
+
+            //check each check box for valid numbers
+            if (!int.TryParse(txtGearLevel.Text, out result))
+            {
+                errMessages += "Gear Level needs a valid number. \n";
+                isAllValid = false;
+            }
+
+            if (IsTextBoxEmpty(txtGearName))
+            {
+                errMessages += "Gear Name needs a name. \n";
+                isAllValid = false;
+            }
+
+            if (IsTextBoxEmpty(txtGearType))
+            {
+                errMessages += "Gear Type needs to be defined. \n";
+                isAllValid = false;
+            }
+
+            if (IsTextBoxEmpty(txtGearSlot))
+            {
+                errMessages += "Gear Slot needs to be specified. \n";
+                isAllValid = false;
+            }
+
+            if (IsTextBoxEmpty(txtDamageStat))
+            {
+
+            }
+            else
+            {
+                if (!int.TryParse(txtDamageStat.Text, out result))
+                {
+                    errMessages += "Damage Stat needs a valid number. \n";
+                    isAllValid = false;
+                }
+            }
+
+            if (IsTextBoxEmpty(txtArmorStat))
+            {
+
+            }
+            else
+            {
+                if (!int.TryParse(txtArmorStat.Text, out result))
+                {
+                    errMessages += "Armor Stat needs a valid number. \n";
+                    isAllValid = false;
+                }
+            }
+
+            if (IsTextBoxEmpty(txtPrimaryStat))
+            {
+
+            }
+            else
+            {
+                if (!int.TryParse(txtPrimaryStat.Text, out result))
+                {
+                    errMessages += "Primary Stat needs a valid number. \n";
+                    isAllValid = false;
+                }
+            }
+
+            if (IsTextBoxEmpty(txtSecondaryStat))
+            {
+
+            }
+            else
+            {
+                if (!int.TryParse(txtSecondaryStat.Text, out result))
+                {
+                    errMessages += "Secondary Stat needs a valid number. \n";
+                    isAllValid = false;
+                }
+            }
+
+            if (IsTextBoxEmpty(txtDurability))
+            {
+
+            }
+            else
+            {
+                if (!int.TryParse(txtDurability.Text, out result))
+                {
+                    errMessages += "Durability Stat needs a valid number. \n";
+                    isAllValid = false;
+                }
+            }
+
+            if (IsTextBoxEmpty(txtSecondaryStatType) && IsNotTextBoxEmpty(txtSecondaryStat))
+            {
+
+                errMessages += "Secondary Stat Type needs to be defined before adding a value. \n";
+                isAllValid = false;
+            }
+            if (IsNotTextBoxEmpty(txtSecondaryStatType) && IsTextBoxEmpty(txtSecondaryStat))
+            {
+                errMessages += "Secondary Stat needs to have valid number. \n";
+                isAllValid = false;
+            }
+
+            if (IsTextBoxEmpty(txtPrimaryStatType) && IsNotTextBoxEmpty(txtPrimaryStat))
+            {
+
+                errMessages += "Primary Stat Type needs to be defined before adding a value. \n";
+                isAllValid = false;
+            }
+            if (IsNotTextBoxEmpty(txtPrimaryStatType) && IsTextBoxEmpty(txtPrimaryStat))
+            {
+                errMessages += "Primary Stat needs to have valid number. \n";
+                isAllValid = false;
+            }
+
+
+
+
+
+            //displays error messaages
+            if (isAllValid == false)
+            {
+                MessageBox.Show(errMessages);
+                return false;
+            }
+            return true;
+
+        }
+
+        private bool IsNotTextBoxEmpty(TextBox txtBox)
+        {
+            if (string.IsNullOrWhiteSpace(txtBox.Text))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private static bool IsTextBoxEmpty(TextBox textBox)
         {
             if (string.IsNullOrWhiteSpace(textBox.Text))
             {
