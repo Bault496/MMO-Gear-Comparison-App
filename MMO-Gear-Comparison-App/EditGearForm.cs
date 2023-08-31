@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MMO_Gear_Comparison_App
 {
@@ -48,7 +49,8 @@ namespace MMO_Gear_Comparison_App
 
                 foreach (Gear g in gearList)
                 {
-                    cboGearSelector.Items.Add(g.ItemName);
+                    cboGearSelector.Items.Add(g);
+                    
                 }
 
             }
@@ -59,6 +61,35 @@ namespace MMO_Gear_Comparison_App
 
                 Close();
             }
+        }
+
+        private void cboGearSelector_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            Gear selectedGear = (Gear)cboGearSelector.SelectedItem;
+
+            RefreshStats(selectedGear);
+        }
+
+        private void RefreshStats(Gear selectedgear)
+        {
+
+
+            txtGearName.Text = selectedgear.ItemName;
+            txtArmorStat.Text = selectedgear.ArmorScaling.ToString();
+            txtDamageStat.Text = selectedgear.DamageScaling.ToString();
+            txtDurability.Text = selectedgear.Durability.ToString();
+            txtGearLevel.Text = selectedgear.ItemLevel.ToString();
+            txtPrimaryStatType.Text = selectedgear.PrimaryStat;
+            txtSecondaryStatType.Text = selectedgear.SecondaryStat;
+            txtPrimaryStat.Text = selectedgear.PrimaryStatScaling.ToString();
+            txtSecondaryStat.Text = selectedgear.SecondaryStatScaling.ToString();
+            txtGearSlot.Text = selectedgear.GearSlot;
+            txtGearType.Text = selectedgear.GearType;
+            
+            
+
+
         }
     }
 }

@@ -14,6 +14,8 @@ namespace MMO_Gear_Comparison_App
     /// </summary>
     public class Gear
     {
+
+
         /// <summary>
         /// Id of the item
         /// </summary>
@@ -78,6 +80,11 @@ namespace MMO_Gear_Comparison_App
         /// like Cloth, Leather, or Plate
         /// </summary>
         public string? GearType { get; set; }
+
+        public override string ToString()
+        {
+            return ItemName;
+        }
 
     }
 }
