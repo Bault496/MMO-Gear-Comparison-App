@@ -63,6 +63,7 @@
             this.btnCancel.TabIndex = 0;
             this.btnCancel.Text = "Cancel Edit Gear";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
             // btnEditGear
             // 
@@ -72,6 +73,7 @@
             this.btnEditGear.TabIndex = 1;
             this.btnEditGear.Text = "Edit Selected Gear";
             this.btnEditGear.UseVisualStyleBackColor = true;
+            this.btnEditGear.Click += new System.EventHandler(this.btnEditGear_Click_1);
             // 
             // cboGearSelector
             // 
