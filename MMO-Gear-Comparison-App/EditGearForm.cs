@@ -71,6 +71,21 @@ namespace MMO_Gear_Comparison_App
             RefreshStats(selectedGear);
         }
 
+        private void ClearStat()
+        {
+            txtGearName.Text = "";
+            txtArmorStat.Text = "";
+            txtDamageStat.Text = "";
+            txtDurability.Text = "";
+            txtGearLevel.Text = "";
+            txtPrimaryStatType.Text = "";
+            txtSecondaryStatType.Text = "";
+            txtPrimaryStat.Text = "";
+            txtSecondaryStat.Text = "";
+            txtGearSlot.Text = "";
+            txtGearType.Text = "";
+        }
+
         private void RefreshStats(Gear selectedgear)
         {
 
