@@ -28,45 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnDeleteGear = new Button();
-            btnCancel = new Button();
-            SuspendLayout();
+            this.btnDeleteGear = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.GearToDelete = new System.Windows.Forms.Label();
+            this.cboGearSelector = new System.Windows.Forms.ComboBox();
+            this.SuspendLayout();
             // 
             // btnDeleteGear
             // 
-            btnDeleteGear.Location = new Point(74, 295);
-            btnDeleteGear.Name = "btnDeleteGear";
-            btnDeleteGear.Size = new Size(137, 60);
-            btnDeleteGear.TabIndex = 0;
-            btnDeleteGear.Text = "Delete Selected Gear";
-            btnDeleteGear.UseVisualStyleBackColor = true;
-            btnDeleteGear.Click += btnDeleteGear_Click;
+            this.btnDeleteGear.Location = new System.Drawing.Point(74, 295);
+            this.btnDeleteGear.Name = "btnDeleteGear";
+            this.btnDeleteGear.Size = new System.Drawing.Size(137, 60);
+            this.btnDeleteGear.TabIndex = 0;
+            this.btnDeleteGear.Text = "Delete Selected Gear";
+            this.btnDeleteGear.UseVisualStyleBackColor = true;
+            this.btnDeleteGear.Click += new System.EventHandler(this.btnDeleteGear_Click_1);
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(314, 312);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(121, 59);
-            btnCancel.TabIndex = 1;
-            btnCancel.Text = "Cancel Delete Gear";
-            btnCancel.UseVisualStyleBackColor = true;
-            btnCancel.Click += btnCancel_Click;
+            this.btnCancel.Location = new System.Drawing.Point(314, 312);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(121, 59);
+            this.btnCancel.TabIndex = 1;
+            this.btnCancel.Text = "Cancel Delete Gear";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
+            // 
+            // GearToDelete
+            // 
+            this.GearToDelete.AutoSize = true;
+            this.GearToDelete.Location = new System.Drawing.Point(59, 47);
+            this.GearToDelete.Name = "GearToDelete";
+            this.GearToDelete.Size = new System.Drawing.Size(87, 15);
+            this.GearToDelete.TabIndex = 2;
+            this.GearToDelete.Text = "Gear to Delete :";
+            // 
+            // cboGearSelector
+            // 
+            this.cboGearSelector.FormattingEnabled = true;
+            this.cboGearSelector.Location = new System.Drawing.Point(152, 44);
+            this.cboGearSelector.Name = "cboGearSelector";
+            this.cboGearSelector.Size = new System.Drawing.Size(121, 23);
+            this.cboGearSelector.TabIndex = 3;
             // 
             // DeleteGearForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(447, 383);
-            Controls.Add(btnCancel);
-            Controls.Add(btnDeleteGear);
-            Name = "DeleteGearForm";
-            Text = "Delete Gear";
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(447, 383);
+            this.Controls.Add(this.cboGearSelector);
+            this.Controls.Add(this.GearToDelete);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnDeleteGear);
+            this.Name = "DeleteGearForm";
+            this.Text = "Delete Gear";
+            this.Load += new System.EventHandler(this.DeleteGearForm_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
 
         private Button btnDeleteGear;
         private Button btnCancel;
+        private Label GearToDelete;
+        private ComboBox cboGearSelector;
     }
 }
