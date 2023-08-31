@@ -53,6 +53,15 @@ namespace MMO_Gear_Comparison_App
 
         private void btnCompareGear_Click(object sender, EventArgs e)
         {
+            // Validation to make sure a gear is selected
+            if(cboFirstGear.SelectedIndex == -1)
+            {
+                MessageBox.Show("First gear must be selected");
+            }
+            if(cboSecondGear.SelectedIndex == -1)
+            {
+                MessageBox.Show("Second gear must be selected");
+            }
 
         }
 
