@@ -68,7 +68,15 @@ namespace MMO_Gear_Comparison_App
                 MessageBox.Show("Second gear must be selected");
             }
 
+            Gear firstGear = new Gear();
+            Gear secondGear = new Gear();
 
+            if (cboSecondGear.SelectedIndex != -1)
+            {
+                firstGear = (Gear)cboFirstGear.Items[cboFirstGear.SelectedIndex];
+                secondGear = (Gear)cboFirstGear.Items[cboSecondGear.SelectedIndex];
+                isGearBetter(firstGear, secondGear);
+            }
         }
 
         /// <summary>
@@ -190,6 +198,26 @@ namespace MMO_Gear_Comparison_App
             txtGearTypeSecondGear.Text = "";
         }
 
+        /// <summary>
+        /// This will cause one of two labels to appear signaling 
+        /// which gear is better based on gear level
+        /// </summary>
+        private void isGearBetter(Gear firstGear, Gear secondGear)
+        {
+            if (firstGear.ItemLevel > secondGear.ItemLevel)
+            {
+                lblFirstGearBetter.Visible = true;
+            }
+            else if (secondGear.ItemLevel > firstGear.ItemLevel)
+            {
+                lblSecondGearBetter.Visible = true;
+            }
+            else
+            {
+                 lblBothGearEqual.Visible = true;
+            }
+        }
+
         private void btnExitGearComparison_Click(object sender, EventArgs e)
         {
             Close();
@@ -207,6 +235,10 @@ namespace MMO_Gear_Comparison_App
             ClearFirstGearStats();
             cboSecondGear.SelectedIndex = -1;
             ClearSecondGearStats();
+
+            lblFirstGearBetter.Visible = false;
+            lblSecondGearBetter.Visible = false;
+            lblBothGearEqual.Visible = false;
         }
     }
 }

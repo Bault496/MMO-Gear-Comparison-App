@@ -79,6 +79,9 @@
             lblItemNameSecondGear = new Label();
             btnCompareGear = new Button();
             btnClearSelectedGear = new Button();
+            lblFirstGearBetter = new Label();
+            lblSecondGearBetter = new Label();
+            lblBothGearEqual = new Label();
             SuspendLayout();
             // 
             // btnExitGearComparison
@@ -277,7 +280,9 @@
             // 
             // txtArmorStatFirstGear
             // 
+            txtArmorStatFirstGear.BackColor = SystemColors.Window;
             txtArmorStatFirstGear.Enabled = false;
+            txtArmorStatFirstGear.ForeColor = SystemColors.WindowText;
             txtArmorStatFirstGear.Location = new Point(147, 230);
             txtArmorStatFirstGear.Name = "txtArmorStatFirstGear";
             txtArmorStatFirstGear.Size = new Size(100, 23);
@@ -521,11 +526,47 @@
             btnClearSelectedGear.UseVisualStyleBackColor = true;
             btnClearSelectedGear.Click += btnClearSelectedGear_Click;
             // 
+            // lblFirstGearBetter
+            // 
+            lblFirstGearBetter.AutoSize = true;
+            lblFirstGearBetter.BackColor = Color.LightGreen;
+            lblFirstGearBetter.Location = new Point(265, 58);
+            lblFirstGearBetter.Name = "lblFirstGearBetter";
+            lblFirstGearBetter.Size = new Size(120, 15);
+            lblFirstGearBetter.TabIndex = 71;
+            lblFirstGearBetter.Text = "The first gear is better";
+            lblFirstGearBetter.Visible = false;
+            // 
+            // lblSecondGearBetter
+            // 
+            lblSecondGearBetter.AutoSize = true;
+            lblSecondGearBetter.BackColor = Color.LightGreen;
+            lblSecondGearBetter.Location = new Point(824, 58);
+            lblSecondGearBetter.Name = "lblSecondGearBetter";
+            lblSecondGearBetter.Size = new Size(138, 15);
+            lblSecondGearBetter.TabIndex = 72;
+            lblSecondGearBetter.Text = "The second gear is better";
+            lblSecondGearBetter.Visible = false;
+            // 
+            // lblBothGearEqual
+            // 
+            lblBothGearEqual.AutoSize = true;
+            lblBothGearEqual.BackColor = Color.LawnGreen;
+            lblBothGearEqual.Location = new Point(461, 58);
+            lblBothGearEqual.Name = "lblBothGearEqual";
+            lblBothGearEqual.Size = new Size(117, 15);
+            lblBothGearEqual.TabIndex = 73;
+            lblBothGearEqual.Text = "Neither gear is better";
+            lblBothGearEqual.Visible = false;
+            // 
             // GearComparisonForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1115, 621);
+            Controls.Add(lblBothGearEqual);
+            Controls.Add(lblSecondGearBetter);
+            Controls.Add(lblFirstGearBetter);
             Controls.Add(btnClearSelectedGear);
             Controls.Add(btnCompareGear);
             Controls.Add(txtGearTypeSecondGear);
@@ -637,5 +678,8 @@
         private Label lblItemNameSecondGear;
         private Button btnCompareGear;
         private Button btnClearSelectedGear;
+        private Label lblFirstGearBetter;
+        private Label lblSecondGearBetter;
+        private Label lblBothGearEqual;
     }
 }
