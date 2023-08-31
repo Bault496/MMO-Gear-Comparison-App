@@ -103,7 +103,7 @@
             // cboSecondGear
             // 
             cboSecondGear.FormattingEnabled = true;
-            cboSecondGear.Location = new Point(615, 55);
+            cboSecondGear.Location = new Point(609, 55);
             cboSecondGear.Name = "cboSecondGear";
             cboSecondGear.Size = new Size(121, 23);
             cboSecondGear.TabIndex = 2;
@@ -121,7 +121,7 @@
             // lblGearSecond
             // 
             lblGearSecond.AutoSize = true;
-            lblGearSecond.Location = new Point(615, 23);
+            lblGearSecond.Location = new Point(609, 23);
             lblGearSecond.Name = "lblGearSecond";
             lblGearSecond.Size = new Size(73, 15);
             lblGearSecond.TabIndex = 4;
@@ -267,7 +267,9 @@
             // 
             // txtPrimaryStatTypeFirstGear
             // 
+            txtPrimaryStatTypeFirstGear.BackColor = SystemColors.Window;
             txtPrimaryStatTypeFirstGear.Enabled = false;
+            txtPrimaryStatTypeFirstGear.ForeColor = SystemColors.WindowText;
             txtPrimaryStatTypeFirstGear.Location = new Point(147, 278);
             txtPrimaryStatTypeFirstGear.Name = "txtPrimaryStatTypeFirstGear";
             txtPrimaryStatTypeFirstGear.Size = new Size(100, 23);
@@ -316,7 +318,7 @@
             // txtGearTypeSecondGear
             // 
             txtGearTypeSecondGear.Enabled = false;
-            txtGearTypeSecondGear.Location = new Point(960, 283);
+            txtGearTypeSecondGear.Location = new Point(954, 283);
             txtGearTypeSecondGear.Name = "txtGearTypeSecondGear";
             txtGearTypeSecondGear.Size = new Size(100, 23);
             txtGearTypeSecondGear.TabIndex = 68;
@@ -324,7 +326,7 @@
             // txtGearSlotSecondGear
             // 
             txtGearSlotSecondGear.Enabled = false;
-            txtGearSlotSecondGear.Location = new Point(960, 235);
+            txtGearSlotSecondGear.Location = new Point(954, 235);
             txtGearSlotSecondGear.Name = "txtGearSlotSecondGear";
             txtGearSlotSecondGear.Size = new Size(100, 23);
             txtGearSlotSecondGear.TabIndex = 67;
@@ -332,7 +334,7 @@
             // txtDurabilitySecondGear
             // 
             txtDurabilitySecondGear.Enabled = false;
-            txtDurabilitySecondGear.Location = new Point(960, 189);
+            txtDurabilitySecondGear.Location = new Point(954, 189);
             txtDurabilitySecondGear.Name = "txtDurabilitySecondGear";
             txtDurabilitySecondGear.Size = new Size(100, 23);
             txtDurabilitySecondGear.TabIndex = 66;
@@ -340,7 +342,7 @@
             // txtSecondaryStatSecondGear
             // 
             txtSecondaryStatSecondGear.Enabled = false;
-            txtSecondaryStatSecondGear.Location = new Point(960, 146);
+            txtSecondaryStatSecondGear.Location = new Point(954, 146);
             txtSecondaryStatSecondGear.Name = "txtSecondaryStatSecondGear";
             txtSecondaryStatSecondGear.Size = new Size(100, 23);
             txtSecondaryStatSecondGear.TabIndex = 65;
@@ -348,7 +350,7 @@
             // txtSecondaryStatTypeSecondGear
             // 
             txtSecondaryStatTypeSecondGear.Enabled = false;
-            txtSecondaryStatTypeSecondGear.Location = new Point(960, 107);
+            txtSecondaryStatTypeSecondGear.Location = new Point(954, 107);
             txtSecondaryStatTypeSecondGear.Name = "txtSecondaryStatTypeSecondGear";
             txtSecondaryStatTypeSecondGear.Size = new Size(100, 23);
             txtSecondaryStatTypeSecondGear.TabIndex = 64;
@@ -356,7 +358,7 @@
             // lblGearTypeSecondGear
             // 
             lblGearTypeSecondGear.AutoSize = true;
-            lblGearTypeSecondGear.Location = new Point(884, 286);
+            lblGearTypeSecondGear.Location = new Point(878, 286);
             lblGearTypeSecondGear.Name = "lblGearTypeSecondGear";
             lblGearTypeSecondGear.Size = new Size(61, 15);
             lblGearTypeSecondGear.TabIndex = 63;
@@ -365,7 +367,7 @@
             // lblGearSlotSecondGear
             // 
             lblGearSlotSecondGear.AutoSize = true;
-            lblGearSlotSecondGear.Location = new Point(888, 238);
+            lblGearSlotSecondGear.Location = new Point(882, 238);
             lblGearSlotSecondGear.Name = "lblGearSlotSecondGear";
             lblGearSlotSecondGear.Size = new Size(57, 15);
             lblGearSlotSecondGear.TabIndex = 62;
@@ -374,7 +376,7 @@
             // lblDurabilitySecondGear
             // 
             lblDurabilitySecondGear.AutoSize = true;
-            lblDurabilitySecondGear.Location = new Point(884, 192);
+            lblDurabilitySecondGear.Location = new Point(878, 192);
             lblDurabilitySecondGear.Name = "lblDurabilitySecondGear";
             lblDurabilitySecondGear.Size = new Size(61, 15);
             lblDurabilitySecondGear.TabIndex = 61;
@@ -383,7 +385,7 @@
             // lblSecondaryStatSecondGear
             // 
             lblSecondaryStatSecondGear.AutoSize = true;
-            lblSecondaryStatSecondGear.Location = new Point(857, 149);
+            lblSecondaryStatSecondGear.Location = new Point(851, 149);
             lblSecondaryStatSecondGear.Name = "lblSecondaryStatSecondGear";
             lblSecondaryStatSecondGear.Size = new Size(88, 15);
             lblSecondaryStatSecondGear.TabIndex = 60;
@@ -392,7 +394,7 @@
             // lblSecondaryStatTypeSecondGear
             // 
             lblSecondaryStatTypeSecondGear.AutoSize = true;
-            lblSecondaryStatTypeSecondGear.Location = new Point(830, 110);
+            lblSecondaryStatTypeSecondGear.Location = new Point(824, 110);
             lblSecondaryStatTypeSecondGear.Name = "lblSecondaryStatTypeSecondGear";
             lblSecondaryStatTypeSecondGear.Size = new Size(115, 15);
             lblSecondaryStatTypeSecondGear.TabIndex = 59;
@@ -401,7 +403,7 @@
             // lblPrimaryStatSecondGear
             // 
             lblPrimaryStatSecondGear.AutoSize = true;
-            lblPrimaryStatSecondGear.Location = new Point(602, 329);
+            lblPrimaryStatSecondGear.Location = new Point(596, 329);
             lblPrimaryStatSecondGear.Name = "lblPrimaryStatSecondGear";
             lblPrimaryStatSecondGear.Size = new Size(74, 15);
             lblPrimaryStatSecondGear.TabIndex = 58;
@@ -410,7 +412,7 @@
             // lblPrimaryStatTypeSecondGear
             // 
             lblPrimaryStatTypeSecondGear.AutoSize = true;
-            lblPrimaryStatTypeSecondGear.Location = new Point(575, 286);
+            lblPrimaryStatTypeSecondGear.Location = new Point(569, 286);
             lblPrimaryStatTypeSecondGear.Name = "lblPrimaryStatTypeSecondGear";
             lblPrimaryStatTypeSecondGear.Size = new Size(101, 15);
             lblPrimaryStatTypeSecondGear.TabIndex = 57;
@@ -419,7 +421,7 @@
             // lblArmorStatSecondGear
             // 
             lblArmorStatSecondGear.AutoSize = true;
-            lblArmorStatSecondGear.Location = new Point(609, 238);
+            lblArmorStatSecondGear.Location = new Point(603, 238);
             lblArmorStatSecondGear.Name = "lblArmorStatSecondGear";
             lblArmorStatSecondGear.Size = new Size(67, 15);
             lblArmorStatSecondGear.TabIndex = 56;
@@ -428,7 +430,7 @@
             // lblDamageStatSecondGear
             // 
             lblDamageStatSecondGear.AutoSize = true;
-            lblDamageStatSecondGear.Location = new Point(599, 192);
+            lblDamageStatSecondGear.Location = new Point(593, 192);
             lblDamageStatSecondGear.Name = "lblDamageStatSecondGear";
             lblDamageStatSecondGear.Size = new Size(77, 15);
             lblDamageStatSecondGear.TabIndex = 55;
@@ -437,7 +439,7 @@
             // lblGearLevelSecondGear
             // 
             lblGearLevelSecondGear.AutoSize = true;
-            lblGearLevelSecondGear.Location = new Point(612, 149);
+            lblGearLevelSecondGear.Location = new Point(606, 149);
             lblGearLevelSecondGear.Name = "lblGearLevelSecondGear";
             lblGearLevelSecondGear.Size = new Size(64, 15);
             lblGearLevelSecondGear.TabIndex = 54;
@@ -446,7 +448,7 @@
             // txtPrimaryStatSecondGear
             // 
             txtPrimaryStatSecondGear.Enabled = false;
-            txtPrimaryStatSecondGear.Location = new Point(703, 326);
+            txtPrimaryStatSecondGear.Location = new Point(697, 326);
             txtPrimaryStatSecondGear.Name = "txtPrimaryStatSecondGear";
             txtPrimaryStatSecondGear.Size = new Size(100, 23);
             txtPrimaryStatSecondGear.TabIndex = 53;
@@ -454,7 +456,7 @@
             // txtPrimaryStatTypeSecondGear
             // 
             txtPrimaryStatTypeSecondGear.Enabled = false;
-            txtPrimaryStatTypeSecondGear.Location = new Point(703, 283);
+            txtPrimaryStatTypeSecondGear.Location = new Point(697, 283);
             txtPrimaryStatTypeSecondGear.Name = "txtPrimaryStatTypeSecondGear";
             txtPrimaryStatTypeSecondGear.Size = new Size(100, 23);
             txtPrimaryStatTypeSecondGear.TabIndex = 52;
@@ -462,7 +464,7 @@
             // txtArmorStatSecondGear
             // 
             txtArmorStatSecondGear.Enabled = false;
-            txtArmorStatSecondGear.Location = new Point(703, 235);
+            txtArmorStatSecondGear.Location = new Point(697, 235);
             txtArmorStatSecondGear.Name = "txtArmorStatSecondGear";
             txtArmorStatSecondGear.Size = new Size(100, 23);
             txtArmorStatSecondGear.TabIndex = 51;
@@ -470,14 +472,14 @@
             // txtDamageStatSecondGear
             // 
             txtDamageStatSecondGear.Enabled = false;
-            txtDamageStatSecondGear.Location = new Point(703, 189);
+            txtDamageStatSecondGear.Location = new Point(697, 189);
             txtDamageStatSecondGear.Name = "txtDamageStatSecondGear";
             txtDamageStatSecondGear.Size = new Size(100, 23);
             txtDamageStatSecondGear.TabIndex = 50;
             // 
             // txtGearLevelSecondGear
             // 
-            txtGearLevelSecondGear.Location = new Point(703, 146);
+            txtGearLevelSecondGear.Location = new Point(697, 146);
             txtGearLevelSecondGear.Name = "txtGearLevelSecondGear";
             txtGearLevelSecondGear.Size = new Size(100, 23);
             txtGearLevelSecondGear.TabIndex = 49;
@@ -485,7 +487,7 @@
             // txtGearNameSecondGear
             // 
             txtGearNameSecondGear.Enabled = false;
-            txtGearNameSecondGear.Location = new Point(703, 107);
+            txtGearNameSecondGear.Location = new Point(697, 107);
             txtGearNameSecondGear.Name = "txtGearNameSecondGear";
             txtGearNameSecondGear.Size = new Size(100, 23);
             txtGearNameSecondGear.TabIndex = 48;
@@ -493,7 +495,7 @@
             // lblItemNameSecondGear
             // 
             lblItemNameSecondGear.AutoSize = true;
-            lblItemNameSecondGear.Location = new Point(607, 110);
+            lblItemNameSecondGear.Location = new Point(601, 110);
             lblItemNameSecondGear.Name = "lblItemNameSecondGear";
             lblItemNameSecondGear.Size = new Size(69, 15);
             lblItemNameSecondGear.TabIndex = 47;
@@ -511,7 +513,7 @@
             // 
             // btnClearSelectedGear
             // 
-            btnClearSelectedGear.Location = new Point(12, 485);
+            btnClearSelectedGear.Location = new Point(946, 543);
             btnClearSelectedGear.Name = "btnClearSelectedGear";
             btnClearSelectedGear.Size = new Size(157, 66);
             btnClearSelectedGear.TabIndex = 70;

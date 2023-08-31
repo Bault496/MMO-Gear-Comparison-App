@@ -67,6 +67,8 @@ namespace MMO_Gear_Comparison_App
             {
                 MessageBox.Show("Second gear must be selected");
             }
+
+
         }
 
         /// <summary>
@@ -77,7 +79,7 @@ namespace MMO_Gear_Comparison_App
         private void cboFirstGear_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Checks to see if the combo boxes are unselected
-            if(cboFirstGear.SelectedIndex != -1)
+            if (cboFirstGear.SelectedIndex != -1)
             {
                 // Create a gear object to hold selected gear
                 Gear selectedGear = new Gear();
@@ -98,7 +100,7 @@ namespace MMO_Gear_Comparison_App
         /// <param name="e"></param>
         private void cboSecondGear_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cboSecondGear.SelectedIndex != -1)
+            if (cboSecondGear.SelectedIndex != -1)
             {
                 // Create a gear object to hold selected gear
                 Gear selectedGear = new Gear();
