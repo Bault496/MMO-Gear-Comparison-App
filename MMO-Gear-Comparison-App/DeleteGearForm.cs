@@ -64,21 +64,27 @@ namespace MMO_Gear_Comparison_App
         private void DeleteGear()
         {
             Gear selectedGear = (Gear)cboGearSelector.SelectedItem;
-            int itemId = selectedGear.ItemID;
-            
-
-            try
+            if (cboGearSelector.SelectedIndex != -1)
             {
-                using GearContext dbContext = new GearContext();
+                int itemId = selectedGear.ItemID;
 
-                dbContext.Gears.Remove(selectedGear);
-                dbContext.SaveChanges();
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Database is not available right now. Please try again later.", "Database Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Close();
+
+
+
+                try
+                {
+                    using GearContext dbContext = new GearContext();
+
+                    dbContext.Gears.Remove(selectedGear);
+                    dbContext.SaveChanges();
+                    MessageBox.Show("Gear was deleted successfully!");
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Database is not available right now. Please try again later.", "Database Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Close();
+                }
             }
             cboGearSelector.SelectedIndex = -1;
         }
