@@ -54,14 +54,25 @@ namespace MMO_Gear_Comparison_App
         private void btnCompareGear_Click(object sender, EventArgs e)
         {
             // Validation to make sure a gear is selected
-            if(cboFirstGear.SelectedIndex == -1)
+            if (cboFirstGear.SelectedIndex == -1)
             {
                 MessageBox.Show("First gear must be selected");
             }
-            if(cboSecondGear.SelectedIndex == -1)
+            if (cboSecondGear.SelectedIndex == -1)
             {
                 MessageBox.Show("Second gear must be selected");
             }
+        }
+
+        // When the user changes their gear selection - first gear
+        private void cboFirstGear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        // When the user changes their gear selection - second gear
+        private void cboSecondGear_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
 
@@ -75,6 +86,10 @@ namespace MMO_Gear_Comparison_App
             Close();
         }
 
-
+        private void btnClearSelectedGear_Click(object sender, EventArgs e)
+        {
+            cboFirstGear.SelectedIndex = -1;
+            cboSecondGear.SelectedIndex = -1;
+        }
     }
 }

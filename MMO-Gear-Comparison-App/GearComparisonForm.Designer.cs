@@ -78,6 +78,7 @@
             txtGearNameSecondGear = new TextBox();
             lblItemNameSecondGear = new Label();
             btnCompareGear = new Button();
+            btnClearSelectedGear = new Button();
             SuspendLayout();
             // 
             // btnExitGearComparison
@@ -97,6 +98,7 @@
             cboFirstGear.Name = "cboFirstGear";
             cboFirstGear.Size = new Size(121, 23);
             cboFirstGear.TabIndex = 1;
+            cboFirstGear.SelectedIndexChanged += cboFirstGear_SelectedIndexChanged;
             // 
             // cboSecondGear
             // 
@@ -105,6 +107,7 @@
             cboSecondGear.Name = "cboSecondGear";
             cboSecondGear.Size = new Size(121, 23);
             cboSecondGear.TabIndex = 2;
+            cboSecondGear.SelectedIndexChanged += cboSecondGear_SelectedIndexChanged;
             // 
             // lblGearOne
             // 
@@ -506,11 +509,22 @@
             btnCompareGear.UseVisualStyleBackColor = true;
             btnCompareGear.Click += btnCompareGear_Click;
             // 
+            // btnClearSelectedGear
+            // 
+            btnClearSelectedGear.Location = new Point(12, 485);
+            btnClearSelectedGear.Name = "btnClearSelectedGear";
+            btnClearSelectedGear.Size = new Size(157, 66);
+            btnClearSelectedGear.TabIndex = 70;
+            btnClearSelectedGear.Text = "Clear Selected Gear";
+            btnClearSelectedGear.UseVisualStyleBackColor = true;
+            btnClearSelectedGear.Click += btnClearSelectedGear_Click;
+            // 
             // GearComparisonForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1115, 621);
+            Controls.Add(btnClearSelectedGear);
             Controls.Add(btnCompareGear);
             Controls.Add(txtGearTypeSecondGear);
             Controls.Add(txtGearSlotSecondGear);
@@ -620,5 +634,6 @@
         private TextBox txtGearNameSecondGear;
         private Label lblItemNameSecondGear;
         private Button btnCompareGear;
+        private Button btnClearSelectedGear;
     }
 }
