@@ -112,5 +112,126 @@ namespace MMO_Gear_Comparison_App
 
 
         }
+
+        private void UpdateGear()
+        {
+            Gear selectedGear = (Gear)cboGearSelector.SelectedItem;
+            int itemId = selectedGear.ItemID;
+            string itemName = txtGearName.Text;
+
+            int itemLevel = Convert.ToInt32(txtGearLevel.Text);
+
+            int? damageScaling = 0;
+            if (IsTextBoxEmpty(txtDamageStat))
+            {
+                damageScaling = null;
+            }
+            else
+            {
+                damageScaling = Convert.ToInt32(txtDamageStat.Text);
+            }
+
+            int? armorScaling = 0;
+            if (IsTextBoxEmpty(txtArmorStat))
+            {
+                armorScaling = null;
+            }
+            else
+            {
+                armorScaling = Convert.ToInt32(txtArmorStat.Text);
+            }
+
+
+            string? primaryStat = txtPrimaryStatType.Text;
+
+            int? primaryStatScaling = 0;
+            if (IsTextBoxEmpty(txtPrimaryStat))
+            {
+                primaryStatScaling = null;
+            }
+            else
+            {
+                primaryStatScaling = Convert.ToInt32(txtPrimaryStat.Text);
+            }
+
+
+            string? secondaryStat = txtSecondaryStatType.Text;
+
+            int? secondaryStatScaling = 0;
+            if (IsTextBoxEmpty(txtSecondaryStat))
+            {
+                secondaryStatScaling = null;
+            }
+            else
+            {
+                secondaryStatScaling = Convert.ToInt32(txtSecondaryStat.Text);
+            }
+
+            int? durability = 0;
+            if (IsTextBoxEmpty(txtDurability))
+            {
+                durability = null;
+            }
+            else
+            {
+                durability = Convert.ToInt32(txtDurability.Text);
+            }
+
+            string gearSlot = txtGearSlot.Text;
+
+            string? gearType = txtGearType.Text;
+
+            Gear gear = new Gear()
+            {
+                ItemID = itemId,
+                ItemName = itemName,
+                ItemLevel = itemLevel,
+                DamageScaling = damageScaling,
+                ArmorScaling = armorScaling,
+                PrimaryStat = primaryStat,
+                PrimaryStatScaling = primaryStatScaling,
+                SecondaryStat = secondaryStat,
+                SecondaryStatScaling = secondaryStatScaling,
+                Durability = durability,
+                GearSlot = gearSlot,
+                GearType = gearType
+            };
+
+            try
+            {
+                using GearContext dbContext = new GearContext();
+
+                dbContext.Gears.Update(gear);
+                dbContext.SaveChanges();
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Database is not available right now. Please try again later.", "Database Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Close();
+            }
+            cboGearSelector.SelectedIndex = -1;
+        }
+
+        private bool IsTextBoxEmpty(System.Windows.Forms.TextBox textBox)
+        {
+            if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private void btnCancel_Click_1(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnEditGear_Click_1(object sender, EventArgs e)
+        {
+            UpdateGear();
+            PopulateGearList();
+        }
     }
 }
