@@ -99,6 +99,11 @@ namespace MMO_Gear_Comparison_App
                 // respective text boxes
                 PopulateFirstGearStats(selectedGear);
             }
+
+            // Changes any which gear is better labels to be hidden
+            lblFirstGearBetter.Visible = false;
+            lblSecondGearBetter.Visible = false;
+            lblBothGearEqual.Visible = false;
         }
 
         /// <summary>
@@ -120,6 +125,11 @@ namespace MMO_Gear_Comparison_App
                 // respective text boxes
                 PopulateSecondGearStats(selectedGear);
             }
+
+            // Changes any which gear is better labels to be hidden
+            lblFirstGearBetter.Visible = false;
+            lblSecondGearBetter.Visible = false;
+            lblBothGearEqual.Visible = false;
         }
 
         /// <summary>
