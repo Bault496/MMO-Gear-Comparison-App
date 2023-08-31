@@ -51,9 +51,21 @@ namespace MMO_Gear_Comparison_App
             }
         }
 
+        private void btnCompareGear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PopulateGearStats()
+        {
+
+        }
+
         private void btnExitGearComparison_Click(object sender, EventArgs e)
         {
             Close();
         }
+
+
     }
 }
