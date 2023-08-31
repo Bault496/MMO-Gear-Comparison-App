@@ -35,14 +35,14 @@ namespace MMO_Gear_Comparison_App
 
                 List<Gear> gearList = dbContext.Gears.ToList();
 
-                foreach(Gear g in gearList)
+                foreach (Gear g in gearList)
                 {
                     cboFirstGear.Items.Add(g.ItemName);
                     cboSecondGear.Items.Add(g.ItemName);
                 }
 
             }
-            catch(SqlException)
+            catch (SqlException)
             {
                 MessageBox.Show("Database is not available. PLease try again later", "Database Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
