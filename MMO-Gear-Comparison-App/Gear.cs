@@ -14,6 +14,8 @@ namespace MMO_Gear_Comparison_App
     /// </summary>
     public class Gear
     {
+
+
         /// <summary>
         /// Id of the item
         /// </summary>
@@ -83,5 +85,6 @@ namespace MMO_Gear_Comparison_App
         {
             return ItemName;
         }
+
     }
 }
