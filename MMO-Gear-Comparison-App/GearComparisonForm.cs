@@ -50,6 +50,12 @@ namespace MMO_Gear_Comparison_App
             }
         }
 
+        /// <summary>
+        /// This will compare the two gears and compare numeric values and determine which are better.
+        /// This will also highlight which of the two are greater and show the user with the use of colors or something alike
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCompareGear_Click(object sender, EventArgs e)
         {
             // Validation to make sure a gear is selected
@@ -63,7 +69,11 @@ namespace MMO_Gear_Comparison_App
             }
         }
 
-        // When the user changes their gear selection - first gear
+        /// <summary>
+        /// When the user changes their gear selection - first gear
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cboFirstGear_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Checks to see if the combo boxes are unselected
@@ -81,7 +91,11 @@ namespace MMO_Gear_Comparison_App
             }
         }
 
-        // When the user changes their gear selection - second gear
+        /// <summary>
+        /// When the user changes their gear selection - second gear
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cboSecondGear_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(cboSecondGear.SelectedIndex != -1)
@@ -143,7 +157,17 @@ namespace MMO_Gear_Comparison_App
         /// </summary>
         private void ClearFirstGearStats()
         {
-
+            txtGearNameFirstGear.Text = "";
+            txtGearLevelFirstGear.Text = "";
+            txtDamageStatFirstGear.Text = "";
+            txtArmorStatFirstGear.Text = "";
+            txtPrimaryStatTypeFirstGear.Text = "";
+            txtPrimaryStatFirstGear.Text = "";
+            txtSecondaryStatTypeFirstGear.Text = "";
+            txtSecondaryStatFirstGear.Text = "";
+            txtDurabilityFirstGear.Text = "";
+            txtGearSlotFirstGear.Text = "";
+            txtGearTypeFirstGear.Text = "";
         }
 
         /// <summary>
@@ -151,7 +175,17 @@ namespace MMO_Gear_Comparison_App
         /// </summary>
         private void ClearSecondGearStats()
         {
-
+            txtGearNameSecondGear.Text = "";
+            txtGearLevelSecondGear.Text = "";
+            txtDamageStatSecondGear.Text = "";
+            txtArmorStatSecondGear.Text = "";
+            txtPrimaryStatTypeSecondGear.Text = "";
+            txtPrimaryStatSecondGear.Text = "";
+            txtSecondaryStatTypeSecondGear.Text = "";
+            txtSecondaryStatSecondGear.Text = "";
+            txtDurabilitySecondGear.Text = "";
+            txtGearSlotSecondGear.Text = "";
+            txtGearTypeSecondGear.Text = "";
         }
 
         private void btnExitGearComparison_Click(object sender, EventArgs e)
@@ -159,6 +193,12 @@ namespace MMO_Gear_Comparison_App
             Close();
         }
 
+        /// <summary>
+        /// Clear all text boxes of their values and clear the selected item in the
+        /// combo boxes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnClearSelectedGear_Click(object sender, EventArgs e)
         {
             cboFirstGear.SelectedIndex = -1;
