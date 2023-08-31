@@ -29,7 +29,7 @@ namespace MMO_Gear_Comparison_App
             int itemLevel = Convert.ToInt32(txtGearLevel.Text);
 
             int? damageScaling = 0;
-            if(IsTextBoxEmpty(txtDamageStat))
+            if (IsTextBoxEmpty(txtDamageStat))
             {
                 damageScaling = null;
             }
@@ -39,7 +39,7 @@ namespace MMO_Gear_Comparison_App
             }
 
             int? armorScaling = 0;
-            if(IsTextBoxEmpty(txtArmorStat))
+            if (IsTextBoxEmpty(txtArmorStat))
             {
                 armorScaling = null;
             }
@@ -47,7 +47,7 @@ namespace MMO_Gear_Comparison_App
             {
                 armorScaling = Convert.ToInt32(txtArmorStat.Text);
             }
-            
+
 
             string? primaryStat = txtPrimaryStatType.Text;
 
@@ -60,7 +60,7 @@ namespace MMO_Gear_Comparison_App
             {
                 primaryStatScaling = Convert.ToInt32(txtPrimaryStat.Text);
             }
-            
+
 
             string? secondaryStat = txtSecondaryStatType.Text;
 
@@ -75,7 +75,7 @@ namespace MMO_Gear_Comparison_App
             }
 
             int? durability = 0;
-            if(IsTextBoxEmpty(txtDurability))
+            if (IsTextBoxEmpty(txtDurability))
             {
                 durability = null;
             }
@@ -122,7 +122,7 @@ namespace MMO_Gear_Comparison_App
 
         private static bool IsTextBoxEmpty(TextBox textBox)
         {
-            if(string.IsNullOrWhiteSpace(textBox.Text))
+            if (string.IsNullOrWhiteSpace(textBox.Text))
             {
                 return true;
             }
@@ -148,6 +148,11 @@ namespace MMO_Gear_Comparison_App
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnClearGear_Click(object sender, EventArgs e)
+        {
+            ClearGearStats();
         }
     }
 }

@@ -52,11 +52,12 @@
             txtDurability = new TextBox();
             txtGearSlot = new TextBox();
             txtGearType = new TextBox();
+            btnClearGear = new Button();
             SuspendLayout();
             // 
             // btnSubmitGear
             // 
-            btnSubmitGear.Location = new Point(158, 347);
+            btnSubmitGear.Location = new Point(222, 293);
             btnSubmitGear.Name = "btnSubmitGear";
             btnSubmitGear.Size = new Size(164, 72);
             btnSubmitGear.TabIndex = 0;
@@ -66,9 +67,9 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(633, 366);
+            btnCancel.Location = new Point(655, 382);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(155, 72);
+            btnCancel.Size = new Size(133, 56);
             btnCancel.TabIndex = 1;
             btnCancel.Text = "Cancel Create Gear";
             btnCancel.UseVisualStyleBackColor = true;
@@ -250,11 +251,22 @@
             txtGearType.Size = new Size(100, 23);
             txtGearType.TabIndex = 24;
             // 
+            // btnClearGear
+            // 
+            btnClearGear.Location = new Point(12, 382);
+            btnClearGear.Name = "btnClearGear";
+            btnClearGear.Size = new Size(116, 56);
+            btnClearGear.TabIndex = 25;
+            btnClearGear.Text = "Clear Gear";
+            btnClearGear.UseVisualStyleBackColor = true;
+            btnClearGear.Click += btnClearGear_Click;
+            // 
             // CreateGearForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnClearGear);
             Controls.Add(txtGearType);
             Controls.Add(txtGearSlot);
             Controls.Add(txtDurability);
@@ -311,5 +323,6 @@
         private TextBox txtDurability;
         private TextBox txtGearSlot;
         private TextBox txtGearType;
+        private Button btnClearGear;
     }
 }
